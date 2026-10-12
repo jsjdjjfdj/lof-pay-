@@ -1,0 +1,277 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#450808" />
+      <stop offset="55%" stop-color="#1f0202" />
+      <stop offset="85%" stop-color="#0a0101" />
+      <stop offset="100%" stop-color="#000000" />
+    </radialGradient>
+
+    <!-- Fire Outer Glow -->
+    <radialGradient id="fireGlow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#ff7700" stop-opacity="0.8" />
+      <stop offset="45%" stop-color="#dd1100" stop-opacity="0.4" />
+      <stop offset="80%" stop-color="#880000" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Ring Fiery Gradient -->
+    <linearGradient id="ringFire" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffee00" />
+      <stop offset="30%" stop-color="#ff6600" />
+      <stop offset="70%" stop-color="#cc0000" />
+      <stop offset="100%" stop-color="#ff9900" />
+    </linearGradient>
+
+    <!-- Flame Body Gradient (Yellow to Red) -->
+    <linearGradient id="flameGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#fffb00" />
+      <stop offset="35%" stop-color="#ff7700" />
+      <stop offset="85%" stop-color="#cc1100" />
+      <stop offset="100%" stop-color="#550000" />
+    </linearGradient>
+
+    <!-- Inner Bright Flame -->
+    <linearGradient id="brightFlame" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#ffee33" />
+      <stop offset="75%" stop-color="#ff8800" />
+      <stop offset="100%" stop-color="#dd2200" />
+    </linearGradient>
+
+    <!-- Text Fire Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="18%" stop-color="#fff033" />
+      <stop offset="50%" stop-color="#ff7700" />
+      <stop offset="85%" stop-color="#dd0000" />
+      <stop offset="100%" stop-color="#880000" />
+    </linearGradient>
+
+    <!-- Gold Accent Rim -->
+    <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffea00" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#ffaa00" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="emberGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Circular Base Badge -->
+  <circle cx="256" cy="256" r="248" fill="#030001" />
+  <circle cx="256" cy="256" r="236" fill="url(#bgGrad)" />
+
+  <!-- Ambient Inner Fire Radial Aura -->
+  <circle cx="256" cy="230" r="210" fill="url(#fireGlow)" />
+
+  <!-- OUTER FLAME BURSTS LEAPING ABOVE RING -->
+  <!-- Top Center Main Spire Flames -->
+  <path d="M 256,12 C 275,65 295,110 270,165 C 295,120 325,100 320,50 C 335,90 350,145 315,190 C 340,165 370,160 375,115 C 385,160 365,215 330,240 C 315,190 280,180 256,220 C 235,180 200,190 185,240 C 150,215 130,160 140,115 C 145,160 175,165 200,190 C 165,145 180,90 195,50 C 190,100 220,120 245,165 C 220,110 240,65 256,12 Z"
+        fill="url(#flameGrad)" />
+
+  <!-- Inner Bright Flames at the Spire -->
+  <path d="M 256,40 C 268,80 280,120 262,160 C 280,125 302,112 298,75 C 310,105 320,150 295,185 C 315,165 335,165 338,132 C 344,168 328,208 300,226 C 285,185 265,180 256,205 C 247,180 227,185 212,226 C 184,208 168,168 174,132 C 177,165 197,165 217,185 C 192,150 202,105 214,75 C 210,112 232,125 250,160 C 232,120 244,80 256,40 Z"
+        fill="url(#brightFlame)" opacity="0.9" />
+
+  <!-- Side Flame Wings (Left & Right) -->
+  <path d="M 50,200 C 65,170 95,150 115,175 C 100,195 90,225 65,240 C 85,245 110,240 120,265 C 95,275 75,305 60,340 C 70,310 95,295 110,315 C 90,340 85,370 95,400 C 105,370 125,350 140,370 C 120,400 135,430 160,445 C 140,430 135,410 138,390 Z"
+        fill="url(#flameGrad)" opacity="0.85" />
+  <path d="M 462,200 C 447,170 417,150 397,175 C 412,195 422,225 447,240 C 427,245 402,240 392,265 C 417,275 437,305 452,340 C 442,310 417,295 402,315 C 422,340 427,370 417,400 C 407,370 387,350 372,370 C 392,400 377,430 352,445 C 372,430 377,410 374,390 Z"
+        fill="url(#flameGrad)" opacity="0.85" />
+
+  <!-- Fiery Circular Perimeter Ring -->
+  <circle cx="256" cy="256" r="226" fill="none" stroke="#2a0404" stroke-width="18" />
+  <circle cx="256" cy="256" r="226" fill="none" stroke="url(#ringFire)" stroke-width="12" filter="url(#softGlow)" />
+  <circle cx="256" cy="256" r="226" fill="none" stroke="#fff888" stroke-width="3" opacity="0.8" />
+
+  <!-- INNER SHIELD / BACKING -->
+  <polygon points="256,120 370,180 345,340 256,410 167,340 142,180"
+           fill="#120101" stroke="#ff8800" stroke-width="3" opacity="0.95" />
+
+  <!-- FIERCE BEAST MASCOT HEAD (LION / PREDATOR OF FIRE) -->
+  <g id="mascot">
+    <!-- Dark Silhouette Underlay -->
+    <path d="M 256,140 
+             L 282,165 L 315,145 L 305,185 L 340,180 L 320,215 L 350,230 L 315,255 L 335,280 L 295,290 L 310,325 L 275,320 L 270,345 L 256,335
+             L 242,345 L 237,320 L 202,325 L 217,290 L 177,280 L 197,255 L 162,230 L 192,215 L 172,180 L 207,185 L 197,145 L 230,165 Z"
+          fill="#050000" stroke="#ffaa00" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Beast Fiery Mane Highlights -->
+    <path d="M 256,150 L 275,175 L 302,160 L 292,195 L 325,195 L 308,225 L 332,240 L 300,260 L 318,282 L 285,290 L 295,315 L 268,312 L 256,325
+             L 244,312 L 217,315 L 227,290 L 194,282 L 212,260 L 180,240 L 204,225 L 187,195 L 220,195 L 210,160 L 237,175 Z"
+          fill="url(#flameGrad)" />
+
+    <!-- Inner Face Structure -->
+    <!-- Forehead & Brow -->
+    <polygon points="256,180 285,210 270,235 256,225 242,235 227,210" fill="#180202" />
+    <polygon points="256,190 275,212 265,225 256,218 247,225 237,212" fill="#ff4400" />
+
+    <!-- Fierce Angled Eyes -->
+    <!-- Left Eye -->
+    <polygon points="220,225 244,228 238,236 215,232" fill="#ffffff" filter="url(#emberGlow)" />
+    <polygon points="222,226 242,229 237,235 218,232" fill="#ffee00" />
+    <line x1="228" y1="226" x2="236" y2="233" stroke="#000" stroke-width="1.5" />
+    <!-- Right Eye -->
+    <polygon points="292,225 268,228 274,236 297,232" fill="#ffffff" filter="url(#emberGlow)" />
+    <polygon points="290,226 270,229 275,235 294,232" fill="#ffee00" />
+    <line x1="284" y1="226" x2="276" y2="233" stroke="#000" stroke-width="1.5" />
+
+    <!-- Snout & Nose -->
+    <polygon points="256,238 266,252 246,252" fill="#ffea00" />
+    <polygon points="256,244 263,254 249,254" fill="#000000" />
+    
+    <!-- Roaring Open Jaws & Fangs -->
+    <polygon points="244,260 268,260 272,285 256,295 240,285" fill="#0a0000" stroke="#ff3300" stroke-width="2" />
+    <!-- Flaming Throat -->
+    <polygon points="248,268 264,268 260,282 252,282" fill="#ffaa00" />
+    <!-- Top Sharp Fangs -->
+    <polygon points="245,260 249,268 251,260" fill="#ffffff" />
+    <polygon points="267,260 263,268 261,260" fill="#ffffff" />
+    <polygon points="253,260 256,266 259,260" fill="#ffffff" />
+    <!-- Bottom Sharp Fangs -->
+    <polygon points="247,285 250,277 253,285" fill="#ffffff" />
+    <polygon points="265,285 262,277 259,285" fill="#ffffff" />
+
+    <!-- Cheek Spikes -->
+    <polygon points="212,242 236,252 216,262" fill="#ff7700" />
+    <polygon points="300,242 276,252 296,262" fill="#ff7700" />
+  </g>
+
+  <!-- 3D ANGLED ESPORTS BANNER ACROSS MIDDLE / LOWER -->
+  <g id="esports-banner">
+    <!-- Drop Shadow Banner -->
+    <polygon points="36,366 476,326 462,442 50,472" fill="#000000" opacity="0.9" />
+
+    <!-- Main Outer Banner -->
+    <polygon points="40,355 472,315 456,430 56,460"
+             fill="#150202" stroke="#ffbb00" stroke-width="5" stroke-linejoin="round" />
+
+    <!-- Inner Banner Accent Inset -->
+    <polygon points="50,362 462,324 448,422 64,450"
+             fill="#240404" stroke="#ff4400" stroke-width="2" />
+
+    <!-- Red Banner Core Strip -->
+    <polygon points="54,365 458,328 445,418 67,446"
+             fill="#3b0808" />
+
+    <!-- Top & Bottom Golden Accent Trim Lines -->
+    <line x1="45" y1="358" x2="467" y2="319" stroke="url(#goldRim)" stroke-width="3" />
+    <line x1="59" y1="456" x2="453" y2="426" stroke="url(#goldRim)" stroke-width="3" />
+  </g>
+
+  <!-- TYPOGRAPHY: "LEGENDS OF FIRE" -->
+  <g id="typography" transform="rotate(-3.2 256 385)">
+    <!-- WORD 1: "LEGENDS" -->
+    <!-- Layer 1: Massive Black Extrusion -->
+    <text x="256" y="380"
+          text-anchor="middle"
+          font-family="'Arial Black', 'Impact', sans-serif"
+          font-size="62"
+          font-weight="900"
+          letter-spacing="5"
+          fill="#000000"
+          stroke="#000000"
+          stroke-width="16"
+          stroke-linejoin="miter">
+      LEGENDS
+    </text>
+
+    <!-- Layer 2: Bright Golden Bevel Rim -->
+    <text x="256" y="377"
+          text-anchor="middle"
+          font-family="'Arial Black', 'Impact', sans-serif"
+          font-size="62"
+          font-weight="900"
+          letter-spacing="5"
+          fill="#ffee00"
+          stroke="#ffee00"
+          stroke-width="8"
+          stroke-linejoin="round">
+      LEGENDS
+    </text>
+
+    <!-- Layer 3: Vibrant Core Fire Gradient -->
+    <text x="256" y="377"
+          text-anchor="middle"
+          font-family="'Arial Black', 'Impact', sans-serif"
+          font-size="62"
+          font-weight="900"
+          letter-spacing="5"
+          fill="url(#textGrad)">
+      LEGENDS
+    </text>
+
+    <!-- WORD 2: "OF FIRE" -->
+    <!-- Layer 1: Black Outline Drop -->
+    <text x="256" y="426"
+          text-anchor="middle"
+          font-family="'Arial Black', 'Impact', sans-serif"
+          font-size="36"
+          font-weight="900"
+          letter-spacing="9"
+          fill="#000000"
+          stroke="#000000"
+          stroke-width="12"
+          stroke-linejoin="miter">
+      OF FIRE
+    </text>
+
+    <!-- Layer 2: Golden Bevel Rim -->
+    <text x="256" y="424"
+          text-anchor="middle"
+          font-family="'Arial Black', 'Impact', sans-serif"
+          font-size="36"
+          font-weight="900"
+          letter-spacing="9"
+          fill="#ffee00"
+          stroke="#ffee00"
+          stroke-width="5"
+          stroke-linejoin="round">
+      OF FIRE
+    </text>
+
+    <!-- Layer 3: Core Fire Gradient -->
+    <text x="256" y="424"
+          text-anchor="middle"
+          font-family="'Arial Black', 'Impact', sans-serif"
+          font-size="36"
+          font-weight="900"
+          letter-spacing="9"
+          fill="url(#textGrad)">
+      OF FIRE
+    </text>
+  </g>
+
+  <!-- FLYING GLOWING EMBER PARTICLES & SPARKS -->
+  <g id="embers">
+    <circle cx="120" cy="80" r="4" fill="#ffffff" filter="url(#emberGlow)" />
+    <circle cx="160" cy="45" r="3" fill="#ffea00" filter="url(#emberGlow)" />
+    <circle cx="210" cy="25" r="5" fill="#ffffff" filter="url(#emberGlow)" />
+    <circle cx="295" cy="20" r="4.5" fill="#ffffff" filter="url(#emberGlow)" />
+    <circle cx="340" cy="55" r="3" fill="#ffaa00" filter="url(#emberGlow)" />
+    <circle cx="390" cy="90" r="4" fill="#ffffff" filter="url(#emberGlow)" />
+
+    <circle cx="75" cy="160" r="3" fill="#ff7700" />
+    <circle cx="435" cy="165" r="3.5" fill="#ffdd00" />
+    <circle cx="55" cy="270" r="2.5" fill="#ffffff" />
+    <circle cx="455" cy="280" r="3" fill="#ffffff" />
+    <circle cx="100" cy="450" r="3" fill="#ff8800" />
+    <circle cx="410" cy="460" r="3.5" fill="#ffcc00" />
+
+    <!-- Diamond fire spark stars -->
+    <polygon points="256,0 260,8 256,16 252,8" fill="#ffffff" filter="url(#emberGlow)" />
+    <polygon points="310,35 313,42 310,49 307,42" fill="#fff9aa" />
+    <polygon points="190,40 193,47 190,54 187,47" fill="#fff9aa" />
+  </g>
+</svg>

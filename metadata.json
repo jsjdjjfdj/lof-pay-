@@ -1,0 +1,6 @@
+{
+  "name": "LEGENDS OF FIRE | Official Payment Portal",
+  "description": "Official Bangla QR payment portal for LEGENDS OF FIRE with zero fees, instant payment, and direct video tutorial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

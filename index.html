@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEGENDS OF FIRE | Official Payment Portal</title>
+    <meta name="description" content="Official Bangla QR payment portal for LEGENDS OF FIRE with zero fees, instant payment, and direct video tutorial." />
+    <meta property="og:title" content="LEGENDS OF FIRE | Official Payment Portal" />
+    <meta property="og:description" content="Official Bangla QR payment portal for LEGENDS OF FIRE with zero fees, instant payment, and direct video tutorial." />
+    <meta property="og:image" content="/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      // Suppress dev-environment Vite WebSocket / HMR disconnection notices
+      (function() {
+        // Protective mock for any Vite WebSocket connection
+        if (typeof window !== 'undefined' && window.WebSocket) {
+          const OrigWS = window.WebSocket;
+          window.WebSocket = function(url, protocols) {
+            const urlStr = String(url || '');
+            const protoStr = String(protocols || '');
+            if (urlStr.includes('vite') || protoStr.includes('vite') || urlStr.includes('ws://') || urlStr.includes('wss://')) {
+              return {
+                readyState: 1, // OPEN
+                send: function() {},
+                close: function() {},
+                addEventListener: function(evt, fn) {
+                  if (evt === 'open') setTimeout(() => fn({ type: 'open' }), 5);
+                },
+                removeEventListener: function() {},
+                dispatchEvent: function() { return true; }
+              };
+            }
+            return new OrigWS(url, protocols);
+          };
+          window.WebSocket.prototype = OrigWS.prototype;
+        }
+
+        const origError = console.error;
+        console.error = function(...args) {
+          const msg = args.map(a => String(a?.message || a || '')).join(' ');
+          if (msg.includes('WebSocket') || msg.includes('[vite]') || msg.includes('ws://') || msg.includes('wss://')) {
+            return;
+          }
+          origError.apply(console, args);
+        };
+        const origWarn = console.warn;
+        console.warn = function(...args) {
+          const msg = args.map(a => String(a?.message || a || '')).join(' ');
+          if (msg.includes('WebSocket') || msg.includes('[vite]') || msg.includes('ws://') || msg.includes('wss://')) {
+            return;
+          }
+          origWarn.apply(console, args);
+        };
+        window.addEventListener('unhandledrejection', function(event) {
+          const reason = String(event.reason?.message || event.reason || '');
+          if (reason.includes('WebSocket') || reason.includes('[vite]')) {
+            event.preventDefault();
+            event.stopImmediatePropagation?.();
+          }
+        }, true);
+        window.addEventListener('error', function(event) {
+          const msg = String(event.message || '');
+          if (msg.includes('WebSocket') || msg.includes('[vite]')) {
+            event.preventDefault();
+            event.stopImmediatePropagation?.();
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body class="bg-[#fafafa] text-slate-800 antialiased font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
